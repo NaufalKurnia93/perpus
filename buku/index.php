@@ -21,14 +21,14 @@
               Data Buku
             </div>
             <div class="card-body">
-              <a href="tambah.php" class="btn btn-md btn-primary" style="margin-bottom: 10px">TAMBAH DATA</a>
+              <a href="tambah.php" class="btn btn-md btn-primary" style="margin-bottom: 10px">TAMBAH BUKU</a>
               <table class="table table-bordered ">
                 <thead>
                   <tr>
                     <th scope="col">NO.</th>
                     <th scope="col">JUDUL</th>
-                    <th scope="col">PENULIS</th>
                     <th scope="col">KATEGORI</th>
+                    <th scope="col">PENULIS</th>
                     <th scope="col">PENERBIT</th>
                     <th scope="col">TAHUN TERBIT</th>
                     <th scope="col">AKSI</th>
@@ -45,13 +45,37 @@
                   <tr>
                       <td><?php echo $no++ ?></td>
                       <td><?php echo $row['judul'] ?></td>
-                      <td><?php echo $row['kategori'] ?></td>
-                      <td><?php echo $row['penulis'] ?></td>
+
+                       <td>
+                      <?php 
+                          $kategori = mysqli_query($connection, "select * from kategori");
+                          while($key = mysqli_fetch_array($kategori)) {
+                            if ($key['id_kategori'] == $row['id_kategori']) { ?>
+                            <?php echo $key['nama_kategori']; ?>
+                            <?php 
+                            }
+                          }
+                          ?>
+                       </td>
+
+
+                    <td>
+                      <?php 
+                          $penulis = mysqli_query($connection, "select * from penulis");
+                          while($key = mysqli_fetch_array($penulis)) {
+                            if ($key['id_penulis'] == $row['id_penulis']) { ?>
+                            <?php echo $key['nama_penulis']; ?>
+                            <?php 
+                            }
+                          }
+                          ?>
+                       </td>
+                       
                       <td><?php echo $row['penerbit'] ?></td>
                       <td><?php echo $row['tahun_terbit'] ?></td>
                       <td class="text-center">
-                        <a href="edit.php?id=<?php echo $row['id_petugas'] ?>" class="btn btn-sm btn-primary">EDIT</a>
-                        <a href="hapus.php?id=<?php echo $row['id_petugas'] ?>" class="btn btn-sm btn-danger">HAPUS</a>
+                        <a href="edit.php?id=<?php echo $row['id_buku'] ?>" class="btn btn-sm btn-primary">EDIT</a>
+                        <a href="hapus.php?id=<?php echo $row['id_buku'] ?>" class="btn btn-sm btn-danger">HAPUS</a>
                       </td>
                   </tr>
 

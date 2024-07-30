@@ -4,22 +4,22 @@
 include('../database/koneksi.php');
 
 //get data dari form
-$nama                = $_POST['nama_petugas'];
-$jabatan            = $_POST['jabatan'];
-$alamat             = $_POST['alamat'];
-$shift              = $_POST['shift'];
-$jenis_kelamin      = $_POST['jenis_kelamin'];
+$judul                = $_POST['judul'];
+$kategori            = $_POST['id_kategori'];
+$penulis             = $_POST['id_penulis'];
+$penerbit              = $_POST['penerbit'];
+$tahun_terbit      = $_POST['tahun_terbit'];
 
-// tampilkan nilai variable
-echo "Nama: " . $nama . "<br>";
-echo "jabatan: " . $jabatan . "<br>";
-echo "alamat: " . $alamat . "<br>";
-echo "shift: " . $shift . "<br>";
-echo "jenis kelamin: " . $jenis_kelamin . "<br>";
+// // tampilkan nilai variable
+// echo "Nama: " . $nama . "<br>";
+// echo "jabatan: " . $jabatan . "<br>";
+// echo "alamat: " . $alamat . "<br>";
+// echo "shift: " . $shift . "<br>";
+// echo "jenis kelamin: " . $jenis_kelamin . "<br>";
 
 
 //query insert data ke dalam database
-$query = "INSERT INTO petugas ( nama_petugas, jabatan, alamat, shift, jenis_kelamin) VALUES ('$nama', '$jabatan', '$alamat', '$shift', '$jenis_kelamin')";
+$query = "INSERT INTO buku ( judul, id_kategori, id_penulis, penerbit, tahun_terbit) VALUES ('$judul', '$kategori', '$penulis', '$penerbit', '$tahun_terbit')";
 
 //kondisi pengecekan apakah data berhasil dimasukkan atau tidak
 if($connection->query($query)) {
@@ -30,7 +30,7 @@ if($connection->query($query)) {
 } else {
 
     //pesan error gagal insert data
-    echo "Data Gagal Disimpan!"; 
+    echo "Data Gagal Disimpan!" . $connection->error;
     // $connection->error;
 
 }

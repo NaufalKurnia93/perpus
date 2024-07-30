@@ -22,6 +22,7 @@
                      <a href="penulis/index.php" class="nav-link fw-bold text-dark">Penulis</a>
                      <a href="kategori/index.php" class="nav-link fw-bold text-dark">Kategori</a>
                      <a href="Petugas" class="nav-link fw-bold text-dark">Petugas</a>
+                     <a href="buku/index.php" class="nav-link fw-bold text-dark">Buku</a>
                  </div>
           </nav>
         </div>

@@ -7,7 +7,7 @@
        <!-- cdn css bootstrap start -->
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- cdn css bootstrap end-->
-    <title>Tambah Petugas</title>
+    <title>Tambah Buku</title>
 </head>
 <body>
     <div class="container">
@@ -15,7 +15,7 @@
             <div class="col-md-8 offset-md-2">
                 <div class="card">
                     <div class="card-header bg-secondary">
-                        <h3 class="text-center">Tambah Petugas</h3>
+                        <h3 class="text-center">Tambah Buku</h3>
                    
                 </div>
                 <div class="card-body p-4">
@@ -23,40 +23,52 @@
                        
 
                         <div class="form-group mb-2">
-                            <label>Nama</label>
-                            <input type="text" name="nama_petugas" placeholder="Masukkan Nama lengkap " class="form-control">
+                            <label>Judul</label>
+                            <input type="text" name="judul" placeholder="Masukkan Nama lengkap " class="form-control">
                         </div>
 
                         <div class="form-group mb-2">
-                           <label>Jabatan</label>
-                                <select class="form-control" name="jabatan">
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
+                           <label class="form-label">Kategori</label>
+                                <select class="form-control" name="id_kategori">
+                                <option value="">--pilih kategori--</option>
+                                <?php
+                                 include('../database/koneksi.php');
+                                 $result = mysqli_query($connection, "select * from kategori");
+                                 while($key = mysqli_fetch_array($result)){
+                                ?>
+                            <option value="<?php echo $key['id_kategori']; ?>"><?php echo $key['nama_kategori']; ?></option>
+                                <?php 
+                                 }
+                                ?>
                             </select>
                         </div>
 
 
                         <div class="form-group mb-2">
-                            <label>Alamat</label>
-                            <input type="text" name="alamat" placeholder="Masukkan Alamat anda" class="form-control">
-                        </div>
-
-                        <div class="form-group mb-2">
-                           <label for="gender">Shift</label>
-                                <select class="form-control" name="shift" required>
-                                <option>pagi</option>
-                                <option>siang</option>
-                                <option>sore</option>
+                           <label class="form-label">Penulis</label>
+                                <select class="form-control" name="id_penulis">
+                                <option value="">--pilih penulis--</option>
+                                <?php
+                                 include('../database/koneksi.php');
+                                 $result = mysqli_query($connection, "select * from penulis");
+                                 while($key = mysqli_fetch_array($result)){
+                                ?>
+                            <option value="<?php echo $key['id_penulis']; ?>"><?php echo $key['nama_penulis']; ?></option>
+                                <?php 
+                                 }
+                                ?>
                             </select>
                         </div>
 
 
                         <div class="form-group mb-2">
-                           <label for="gender">Jenis Kelamin:</label>
-                                <select class="form-control" name="jenis_kelamin">
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
-                            </select>
+                            <label>Penerbit</label>
+                            <input type="text" name="penerbit" placeholder="Masukkan nama penerbit" class="form-control">
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label>Tahun Terbit</label>
+                            <input type="number" name="tahun_terbit" placeholder="Masukkan tahun terbit" class="form-control">
                         </div>
 
                         <button type="submit" class="btn btn-success">SIMPAN</button>
@@ -66,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-end">
+        <div class="text-end">g
     <a href="index.php" class="btn btn-sm btn-primary p-2 mt-4">Kembaii</a>
     </div>
     </div>

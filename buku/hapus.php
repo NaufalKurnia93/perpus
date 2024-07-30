@@ -5,7 +5,7 @@ include('../database/koneksi.php');
 //get id
 $id = $_GET['id'];
 
-$query = "DELETE FROM petugas WHERE id_petugas = '$id'";
+$query = "DELETE FROM buku WHERE id_buku = '$id'";
 
 if($connection->query($query)) {
     header("location: index.php");

@@ -43,36 +43,53 @@
                  
                 </div>
 
+                
                 <div class="form-group mb-2">
-                           <label>Kategori</label>
-                                <select class="form-control" name="jabatan">
-                                <option>Kepala Perpustakaan</option>
-                                <option>Teknisi Perpustakaan</option>
-                                <option>Pelayanan Pengguna</option>
+                           <label class="form-label">Kategori</label>
+                                <select class="form-control" name="id_kategori">
+                        <?php 
+                          $kategori = mysqli_query($connection, "select * from kategori");
+                          while($key = mysqli_fetch_array($kategori)) {
+                            if ($key['id_kategori'] == $key['id_kategori']) { ?>
+                           
+                               <option value="<?php echo $key['id_kategori']; ?>" selected><?php echo $key['nama_kategori']; ?></option>;
+                      <?php } else { ?> 
+                        <option value="<?php echo $key['id_kategori']; ?>"><?php echo $key['nama_kategori']; ?></option>;
+                            <?php }
+                          }
+                        ?>
+                                <option value="">--pilih kategori--</option>
                             </select>
                         </div>
 
-                <div class="form-group">
-                  <label>Alamat</label>
-                  <input type="text" name="alamat" value="<?php echo $row['alamat'] ?>" placeholder="Masukkan alamat" class="form-control">
+
+                 <div class="form-group mb-2">
+                           <label class="form-label">Penulis</label>
+                                <select class="form-control" name="id_penulis">
+                        <?php 
+                          $penulis = mysqli_query($connection, "select * from penulis");
+                          while($key = mysqli_fetch_array($penulis)) {
+                            if ($key['id_penulis'] == $key['id_penulis']) { ?>
+                           
+                               <option value="<?php echo $key['id_penulis']; ?>" selected><?php echo $key['nama_penulis']; ?></option>;
+                      <?php } else { ?> 
+                        <option value="<?php echo $key['id_penulis']; ?>"><?php echo $key['nama_penulis']; ?></option>;
+                            <?php }
+                          }
+                        ?>
+                                <option value="">--pilih penulis--</option>
+                            </select>
+                        </div>
+
+                  <div class="form-group">
+                  <label>Penerbit</label>
+                  <input type="text" name="penerbit" value="<?php echo $row['penerbit'] ?>" placeholder="Masukkan alamat" class="form-control">
                 </div>
 
-                <div class="form-group mb-2">
-                           <label>Shift</label>
-                                <select class="form-control" name="shift">
-                                <option>pagi</option>
-                                <option>siang</option>
-                                <option>sore</option>
-                            </select>
-                  </div>
-
-                  <div class="form-group mb-2">
-                           <label>Jenis Kelamin</label>
-                                <select class="form-control" name="jenis_kelamin">
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
-                            </select>
-                        </div>
+                <div class="form-group">
+                  <label>Tahun Terbit</label>
+                  <input type="text" name="tahun_terbit" value="<?php echo $row['tahun_terbit'] ?>" placeholder="Masukkan alamat" class="form-control">
+                </div>
                 
                 <button type="submit" class="btn btn-success">UPDATE</button>
                 <button type="reset" class="btn btn-warning">RESET</button>
