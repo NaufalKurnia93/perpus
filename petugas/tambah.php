@@ -30,8 +30,9 @@
                         <div class="form-group mb-2">
                            <label>Jabatan</label>
                                 <select class="form-control" name="jabatan">
-                                <option>Laki-laki</option>
-                                <option>Perempuan</option>
+                                <option>Kepala Perpustakaan</option>
+                                <option>Teknisi Perpustakaan</option>
+                                <option>Pelayanan Pengguna</option>
                             </select>
                         </div>
 

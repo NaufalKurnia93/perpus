@@ -18,7 +18,8 @@
                 <div class="navbar-nav gap-3  d-flex text-center">
                     <a href="#" class="nav-link fw-bold text-dark ">Home</a>
                      <a href="anggota/index_2.php" class="nav-link fw-bold text-dark">Anggota</a>
-                    <a href="#garansi" class="nav-link fw-bold text-dark">Peminjaman</a>
+                    <a href="peminjaman/index.php" class="nav-link fw-bold text-dark">Peminjaman</a>
+                    <a href="detail_peminjaman/index.php" class="nav-link fw-bold text-dark">Detail Peminjaman</a>
                      <a href="penulis/index.php" class="nav-link fw-bold text-dark">Penulis</a>
                      <a href="kategori/index.php" class="nav-link fw-bold text-dark">Kategori</a>
                      <a href="Petugas" class="nav-link fw-bold text-dark">Petugas</a>

@@ -34,7 +34,7 @@
 
                         <div class="form-group mb-2">
                             <label>no Telpon</label>
-                            <input type="text" name="no_telpon" placeholder="Masukkan nomor Telepon Aktive" class="form-control">
+                            <input type="tel" name="no_telpon" placeholder="Masukkan nomor Telepon Aktive" class="form-control">
                         </div>
 
                         <button type="submit" class="btn btn-success">SIMPAN</button>
