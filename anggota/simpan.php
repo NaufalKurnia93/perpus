@@ -15,7 +15,7 @@ $query = "INSERT INTO anggota ( nama, alamat, no_telpon) VALUES ('$nama', '$alam
 if($connection->query($query)) {
 
     //redirect ke halaman index.php 
-    header("location: index_2.php");
+    header("location: index.php");
 
 } else {
 

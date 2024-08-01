@@ -8,7 +8,7 @@ $id = $_GET['id'];
 $query = "DELETE FROM anggota WHERE id_anggota = '$id'";
 
 if($connection->query($query)) {
-    header("location: index_2.php");
+    header("location: index.php");
 } else {
     echo "DATA GAGAL DIHAPUS!";
 }

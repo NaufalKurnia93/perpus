@@ -15,7 +15,7 @@ $query = "UPDATE anggota SET nama = '$nama', alamat = '$alamat', no_telpon = '$n
 //kondisi pengecekan apakah data berhasil diupdate atau tidak
 if($connection->query($query)) {
     //redirect ke halaman index.php 
-    header("location: index_2.php");
+    header("location: index.php");
 } else {
     //pesan error gagal update data
     echo "Data Gagal Diupate!";

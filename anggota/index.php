@@ -26,9 +26,9 @@
                 <thead>
                   <tr>
                     <th scope="col">NO.</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">NAMA</th> 
-                    <th scope="col">ALAMAT</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Alamat</th> 
+                    <th scope="col">No Telepon</th>
                     <th scope="col">AKSI</th>
                   </tr>
                 </thead>
