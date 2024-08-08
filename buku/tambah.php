@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-end">g
+        <div class="text-end">
     <a href="index.php" class="btn btn-sm btn-primary p-2 mt-4">Kembaii</a>
     </div>
     </div>

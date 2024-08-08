@@ -19,7 +19,7 @@
                    
                 </div>
                 <div class="card-body p-4">
-                    <form action="simpan.php" method="POST">
+                    <form action="" method="POST">
                        
 
                         <div class="form-group mb-2">

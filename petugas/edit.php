@@ -31,7 +31,7 @@
               Edit Petugas
             </div>
             <div class="card-body">
-              <form action="update.php" method="POST">
+              <form action="update.php" method="POST"> data//action = url yang akan menerima 
                 
                 <div class="form-group">
                   <div class="">
